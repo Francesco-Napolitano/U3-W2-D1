@@ -7,27 +7,25 @@ import Welcome from './components/Welcome'
 import { Col, Container, Row } from 'react-bootstrap'
 import BookList from './components/BookList'
 import fantasy from './data/fantasy.json'
-import CommentArea from './components/CommentArea'
+import { Component } from 'react'
 
-function App() {
-  return (
-    <>
-      <MyNav />
-      <Container>
-        <Row>
-          <Col xs={8}>
-            <Welcome />
-            {/* <AllTheBooks /> */}
-            <BookList books={fantasy} />
-          </Col>
-          <Col xs={4}>
-            <CommentArea />
-          </Col>
-        </Row>
-      </Container>
-      <MyFooter />
-    </>
-  )
+class App extends Component {
+  render() {
+    return (
+      <>
+        <MyNav />
+        <Container>
+          <Row>
+            <Col>
+              <Welcome />
+              {/* <AllTheBooks /> */}
+              <BookList books={fantasy} />
+            </Col>
+          </Row>
+        </Container>
+        <MyFooter />
+      </>
+    )
+  }
 }
-
 export default App
